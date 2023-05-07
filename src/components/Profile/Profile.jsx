@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ProfileBox, ProfileDesc, UserAvatar, UserName, UserTag, UserLocation} from 'components/Profile/Profile.styled';
+import { ProfileBox, ProfileDesc, UserAvatar, UserName, UserTag, UserLocation, StatsItems, UserLabel, UserQuantity, UserStats } from 'components/Profile/Profile.styled';
 
 const Profile = ({username, tag, location, avatar, followers, views, likes}) => {
     return (
@@ -10,24 +10,24 @@ const Profile = ({username, tag, location, avatar, followers, views, likes}) => 
             alt="User avatar"
           />
           <UserName>{username}</UserName>
-          <UserTag>{tag}</UserTag>
+          <UserTag>@{tag}</UserTag>
           <UserLocation>{location}</UserLocation>
         </ProfileDesc>
       
-        <ul className="stats">
-          <li>
-            <span className="label">Followers</span>
-            <span className="quantity">{followers}</span>
-          </li>
-          <li>
-            <span className="label">Views</span>
-            <span className="quantity">{views}</span>
-          </li>
-          <li>
-            <span className="label">Likes</span>
-            <span className="quantity">{likes}</span>
-          </li>
-        </ul>
+        <UserStats>
+          <StatsItems>
+            <UserLabel>Followers</UserLabel>
+            <UserQuantity>{followers}</UserQuantity>
+          </StatsItems>
+          <StatsItems>
+            <UserLabel>Views</UserLabel>
+            <UserQuantity>{views}</UserQuantity>
+          </StatsItems>
+          <StatsItems>
+            <UserLabel>Likes</UserLabel>
+            <UserQuantity>{likes}</UserQuantity>
+          </StatsItems>
+        </UserStats>
       </ProfileBox>
     )
 };

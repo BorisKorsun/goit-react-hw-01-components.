@@ -42,7 +42,7 @@ export const UserLocation = styled.p`
     margin: 0;
 `;
 
-export const UserStats = styled.p`
+export const UserStats = styled.ul`
     display: flex;
     justify-content: space-evenly;
     list-style: none;
