@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { OnlineStatus, FriendCatalogue, Friend, FriendAvatar } from './FriendList.styled';
 
 const FriendList = ({ friends }) => {
     return (
-        <ul className="friend-list">
+        <FriendCatalogue>
             {MakeFreindCard(friends)}
-        </ul>
+        </FriendCatalogue>
     )
 };
 
@@ -13,11 +14,11 @@ export default FriendList;
 const MakeFreindCard = (friends) => {
     return friends.map(({ id, avatar, name, isOnline}) => {
         return (
-        <li key ={id}>
-            <span class={isOnline}></span>
-            <img class="avatar" src={avatar} alt="User avatar" width="48" />
-            <p class="name">{name}</p>
-        </li>
+        <Friend key ={id}>
+            <OnlineStatus isOnline={isOnline}></OnlineStatus>
+            <FriendAvatar src={avatar} alt="User avatar" width="48" />
+            <p>{name}</p>
+        </Friend>
         );
     });
 };
