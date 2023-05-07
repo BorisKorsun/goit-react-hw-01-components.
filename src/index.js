@@ -7,10 +7,12 @@ import './index.css';
 import Profile from 'components/Profile/Profile';
 import Statistics from 'components/Statistics/Statistics';
 import FriendList from 'components/FriendList/FriendList';
+import TransactionHistory from 'components/TransactionHistory/TransactionHistory';
 
 import user from 'data/user.json';
 import data from 'data/data.json';
 import friends from 'data/friends';
+import transaction from 'data/transactions.json';
 
 import theme from './constants/theme';
 
@@ -33,6 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       stats={data}
       title={'Upload stats'}/>
       <FriendList friends={friends}/>
+      <TransactionHistory items={transaction}/>
     </App>
     </ThemeProvider>
   </React.StrictMode>
