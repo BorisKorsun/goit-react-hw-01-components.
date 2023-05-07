@@ -5,10 +5,8 @@ import {ThemeProvider} from '@emotion/react';
 import { App } from 'components/App';
 import './index.css';
 import Profile from 'components/Profile/Profile';
-import Statistics from 'components/Statistics/Statistics';
 
 import user from 'data/user.json';
-import data from 'data/data.json';
 
 import theme from './constants/theme';
 
@@ -26,10 +24,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       views={stats.views} 
       likes={stats.likes}
       followers={stats.followers}/>
-
-      <Statistics 
-      stats={data}
-      title={'Upload stats'}/>
     </App>
     </ThemeProvider>
   </React.StrictMode>
